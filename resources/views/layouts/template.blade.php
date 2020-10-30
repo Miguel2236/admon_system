@@ -40,13 +40,67 @@
             </div>
             <div class="sidebar-body">
                 <ul class="nav">
-                <li class="nav-item nav-category">Main</li>
-                <li class="nav-item">
-                    <a href="dashboard-one.html" class="nav-link">
-                    <i class="link-icon" data-feather="box"></i>
-                    <span class="link-title">Dashboard</span>
-                    </a>
-                </li>
+                    <li class="nav-item nav-category">Menu</li>
+                    <li class="nav-item">
+                        <a href="{{ route('home') }}" class="nav-link">
+                        <i class="link-icon" data-feather="home"></i>
+                        <span class="link-title">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#tech" role="button" aria-expanded="false" aria-controls="uiComponents">
+                            <i class="link-icon" data-feather="monitor"></i>
+                                <span class="link-title">Technology</span>
+                            <i class="link-arrow" data-feather="chevron-down"></i>
+                        </a>
+                        <div class="collapse" id="tech">
+                            <ul class="nav sub-menu">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Maintance</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Projects</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#userSec" role="button" aria-expanded="false" aria-controls="uiComponents">
+                            <i class="link-icon" data-feather="user"></i>
+                                <span class="link-title">Users</span>
+                            <i class="link-arrow" data-feather="chevron-down"></i>
+                        </a>
+                        <div class="collapse" id="userSec">
+                            <ul class="nav sub-menu">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Users</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Profiles</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#shopSec" role="button" aria-expanded="false" aria-controls="uiComponents">
+                            <i class="link-icon" data-feather="archive"></i>
+                                <span class="link-title">Shop</span>
+                            <i class="link-arrow" data-feather="chevron-down"></i>
+                        </a>
+                        <div class="collapse" id="shopSec">
+                            <ul class="nav sub-menu">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Catalogue</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Shell</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
