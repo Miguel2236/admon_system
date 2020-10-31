@@ -15,7 +15,7 @@ class CreatePermissionsTable extends Migration
     {
         Schema::create('permissions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('section_id')->constrained('sections')->onDelete('cascade');
+            $table->foreignId('section_id')->references('id')->on('sections')->onDelete('cascade');
             $table->string('name',100);
             $table->string('identify',100);
             $table->string('button',100)->nullable();

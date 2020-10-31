@@ -15,8 +15,8 @@ class CreateProfilesPermissionsTable extends Migration
     {
         Schema::create('profiles_permissions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('profile_id')->constrained('profiles')->onDelete('cascade');
-            $table->foreignId('permission_id')->constrained('permissions')->onDelete('cascade');
+            $table->foreignId('profile_id')->references('id')->on('profiles')->onDelete('cascade');
+            $table->foreignId('permission_id')->references('id')->on('permissions')->onDelete('cascade');
             $table->timestamps();
         });
     }
