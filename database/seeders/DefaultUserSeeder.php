@@ -18,27 +18,29 @@ class DefaultUserSeeder extends Seeder
         DB::table('departaments')->insert([
             'name' => 'Administración',
             'description' => 'Administradores del sistema',
-            'bActive' => 1
+            'bActive' => 1,
+            'created_at' => date('Y-m-d H:i:s'),
         ]);
 
         DB::table('profiles')->insert([
             'name' => 'Administrador',
             'description' => 'Administrador del sistema',
-            'bActive' => 1
+            'bActive' => 1,
+            'created_at' => date('Y-m-d H:i:s'),
         ]);
 
         DB::table('modules')->insert([
             'name' => 'Administración',
             'menu_name' => 'Administración',
-            'icon' => 'shield',
-            'bActive' => 1
+            'icon' => 'fas fa-user-shield',
+            'created_at' => date('Y-m-d H:i:s'),
         ]);
 
         DB::table('sections')->insert([
-            'module_id' => 1s,
+            'module_id' => 1,
             'name' => 'Users',
             'short_name' => 'Users',
-            'description' => 'Usuarios',
+            'created_at' => date('Y-m-d H:i:s'),
         ]);
 
         DB::table('permissions')->insert([
@@ -46,6 +48,7 @@ class DefaultUserSeeder extends Seeder
             'name' => 'Users modules',
             'identify' => 'usrSec',
             'button' => '<a href="#" class="nav-link">Users</a>',
+            'created_at' => date('Y-m-d H:i:s'),
         ]);
 
         DB::table('profiles_permissions')->insert([
@@ -53,12 +56,14 @@ class DefaultUserSeeder extends Seeder
             'permission_id' => 1,
         ]);
 
-        DB::table('departaments')->insert([
+        DB::table('users')->insert([
+            'name' => 'Miguel Maldonado',
             'departament_id' => 1,
             'profile_id' => 1,
             'email' => 'miguelm2236@gmail.com',
             'password' => Hash::make('22364011'),
-            'bActive' => 1
+            'bActive' => 1,
+            'created_at' => date('Y-m-d H:i:s'),
         ]);
     }
 }

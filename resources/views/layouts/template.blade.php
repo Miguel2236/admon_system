@@ -20,6 +20,8 @@
 	<!-- endinject -->
     <!-- Layout styles -->  
 	<link rel="stylesheet" href="{{ asset('css/style.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/fontawesome.min.css') }}">
     <!-- End layout styles -->
   <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" />
 </head>
@@ -43,14 +45,14 @@
                     <li class="nav-item nav-category">Menu</li>
                     <li class="nav-item">
                         <a href="{{ route('home') }}" class="nav-link">
-                        <i class="link-icon" data-feather="home"></i>
-                        <span class="link-title">Home</span>
+							<i class="fas fa-home"></i>
+							<span class="link-title">Home</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#tech" role="button" aria-expanded="false" aria-controls="uiComponents">
-                            <i class="link-icon" data-feather="monitor"></i>
+                            <i class="fas fa-laptop"></i>
                                 <span class="link-title">Technology</span>
                             <i class="link-arrow" data-feather="chevron-down"></i>
                         </a>
@@ -68,7 +70,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#userSec" role="button" aria-expanded="false" aria-controls="uiComponents">
-                            <i class="link-icon" data-feather="user"></i>
+                            <i class="fas fa-user"></i>
                                 <span class="link-title">Users</span>
                             <i class="link-arrow" data-feather="chevron-down"></i>
                         </a>
@@ -86,7 +88,7 @@
                     
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#shopSec" role="button" aria-expanded="false" aria-controls="uiComponents">
-                            <i class="link-icon" data-feather="archive"></i>
+                            <i class="fas fa-shopping-cart"></i>
                                 <span class="link-title">Shop</span>
                             <i class="link-arrow" data-feather="chevron-down"></i>
                         </a>
@@ -374,6 +376,7 @@
   <!-- custom js for this page -->
   <script src="{{ asset('js/dashboard.js') }}"></script>
   <script src="{{ asset('js/datepicker.js') }}"></script>
+  <script src="{{ asset('js/all.min.js') }}"></script>
   {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 	<!-- end custom js for this page -->
 </body>
