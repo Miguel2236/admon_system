@@ -48,61 +48,33 @@
 							<i class="fas fa-home"></i>
 							<span class="link-title">Home</span>
                         </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#tech" role="button" aria-expanded="false" aria-controls="uiComponents">
-                            <i class="fas fa-laptop"></i>
-                                <span class="link-title">Technology</span>
-                            <i class="link-arrow" data-feather="chevron-down"></i>
-                        </a>
-                        <div class="collapse" id="tech">
-                            <ul class="nav sub-menu">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">Maintance</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">Projects</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#userSec" role="button" aria-expanded="false" aria-controls="uiComponents">
-                            <i class="fas fa-user"></i>
-                                <span class="link-title">Users</span>
-                            <i class="link-arrow" data-feather="chevron-down"></i>
-                        </a>
-                        <div class="collapse" id="userSec">
-                            <ul class="nav sub-menu">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">Users</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">Profiles</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#shopSec" role="button" aria-expanded="false" aria-controls="uiComponents">
-                            <i class="fas fa-shopping-cart"></i>
-                                <span class="link-title">Shop</span>
-                            <i class="link-arrow" data-feather="chevron-down"></i>
-                        </a>
-                        <div class="collapse" id="shopSec">
-                            <ul class="nav sub-menu">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">Catalogue</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">Shell</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+					</li>
+					@isset($modules)
+						@foreach ($modules as $mod)
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="collapse" href="#{{ $mod->identify }}" role="button" aria-expanded="false" aria-controls="uiComponents">
+									<i class="{{ $mod->icon }}"></i>
+										<span class="link-title">{{ $mod->name }}</span>
+									<i class="link-arrow" data-feather="chevron-down"></i>
+								</a>
+								<div class="collapse" id="{{ $mod->identify }}">
+									<ul class="nav sub-menu">
+										@isset($UserPermission)
+											@foreach ($UserPermission as $usr)
+												@if ($mod->id == $usr->module_id)
+													<li class="nav-item">
+														@php
+															echo $usr->button;
+														@endphp
+													</li>
+												@endif
+											@endforeach
+										@endisset
+									</ul>
+								</div>
+							</li>
+						@endforeach
+					@endisset
                 </ul>
             </div>
         </nav>

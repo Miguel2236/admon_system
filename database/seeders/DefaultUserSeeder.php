@@ -33,6 +33,7 @@ class DefaultUserSeeder extends Seeder
             'name' => 'Administración',
             'menu_name' => 'Administración',
             'icon' => 'fas fa-user-shield',
+            'identify' => 'usrAdmin',
             'created_at' => date('Y-m-d H:i:s'),
         ]);       
 
@@ -67,7 +68,6 @@ class DefaultUserSeeder extends Seeder
         DB::table('permissions')->insert([
             'section_id' => 1,
             'name' => 'Users module',
-            'identify' => 'usrSec',
             'button' => '<a href="#" class="nav-link">Users</a>',
             'created_at' => date('Y-m-d H:i:s'),
         ]);
@@ -75,7 +75,6 @@ class DefaultUserSeeder extends Seeder
         DB::table('permissions')->insert([
             'section_id' => 2,
             'name' => 'Departaments module',
-            'identify' => 'depSec',
             'button' => '<a href="#" class="nav-link">Departaments</a>',
             'created_at' => date('Y-m-d H:i:s'),
         ]);
@@ -83,7 +82,6 @@ class DefaultUserSeeder extends Seeder
         DB::table('permissions')->insert([
             'section_id' => 3,
             'name' => 'Modules',
-            'identify' => 'modSec',
             'button' => '<a href="#" class="nav-link">Modules</a>',
             'created_at' => date('Y-m-d H:i:s'),
         ]);
@@ -91,7 +89,6 @@ class DefaultUserSeeder extends Seeder
         DB::table('permissions')->insert([
             'section_id' => 3,
             'name' => 'Profiles Module',
-            'identify' => 'modSec',
             'button' => '<a href="#" class="nav-link">Profiles</a>',
             'created_at' => date('Y-m-d H:i:s'),
         ]);

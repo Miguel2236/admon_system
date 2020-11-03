@@ -18,6 +18,7 @@ class CreateModulesTable extends Migration
             $table->string('name',100);
             $table->string('menu_name',50);
             $table->string('icon',50);
+            $table->string('identify',100);
             $table->timestamps();
         });
     }
