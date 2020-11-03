@@ -39,7 +39,7 @@
                 <span></span>
                 <span></span>
                 </div>
-            </div>
+			</div>
             <div class="sidebar-body">
                 <ul class="nav">
                     <li class="nav-item nav-category">Menu</li>
@@ -49,8 +49,8 @@
 							<span class="link-title">Home</span>
                         </a>
 					</li>
-					@isset($modules)
-						@foreach ($modules as $mod)
+					@isset($ress['modules'])
+						@foreach ($ress['modules'] as $mod)
 							<li class="nav-item">
 								<a class="nav-link" data-toggle="collapse" href="#{{ $mod->identify }}" role="button" aria-expanded="false" aria-controls="uiComponents">
 									<i class="{{ $mod->icon }}"></i>
@@ -59,8 +59,8 @@
 								</a>
 								<div class="collapse" id="{{ $mod->identify }}">
 									<ul class="nav sub-menu">
-										@isset($UserPermission)
-											@foreach ($UserPermission as $usr)
+										@isset($ress['UserPermission'])
+											@foreach ($ress['UserPermission'] as $usr)
 												@if ($mod->id == $usr->module_id)
 													<li class="nav-item">
 														@php
@@ -279,13 +279,13 @@
 								<div class="dropdown-body">
 									<ul class="profile-nav p-0 pt-3">
 										<li class="nav-item">
-											<a href="pages/general/profile.html" class="nav-link">
+											<a href="#" class="nav-link">
 												<i data-feather="user"></i>
 												<span>Profile</span>
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="javascript:;" class="nav-link">
+											<a href="{{ route('user_edit',$ress['id']) }}" class="nav-link">
 												<i data-feather="edit"></i>
 												<span>Edit Profile</span>
 											</a>
