@@ -68,28 +68,28 @@ class DefaultUserSeeder extends Seeder
         DB::table('permissions')->insert([
             'section_id' => 1,
             'name' => 'Users module',
-            'button' => '<a href="#" class="nav-link">Users</a>',
+            'route' => '',
             'created_at' => date('Y-m-d H:i:s'),
         ]);
 
         DB::table('permissions')->insert([
             'section_id' => 2,
             'name' => 'Departaments module',
-            'button' => '<a href="#" class="nav-link">Departaments</a>',
+            'route' => 'departament_list',
             'created_at' => date('Y-m-d H:i:s'),
         ]);
 
         DB::table('permissions')->insert([
             'section_id' => 3,
             'name' => 'Modules',
-            'button' => '<a href="#" class="nav-link">Modules</a>',
+            'route' => '',
             'created_at' => date('Y-m-d H:i:s'),
         ]);
 
         DB::table('permissions')->insert([
-            'section_id' => 3,
+            'section_id' => 4,
             'name' => 'Profiles Module',
-            'button' => '<a href="#" class="nav-link">Profiles</a>',
+            'route' => '',
             'created_at' => date('Y-m-d H:i:s'),
         ]);
 

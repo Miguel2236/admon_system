@@ -17,7 +17,7 @@ class CreatePermissionsTable extends Migration
             $table->id();
             $table->foreignId('section_id')->references('id')->on('sections')->onDelete('cascade');
             $table->string('name',100);
-            $table->string('button',100)->nullable();
+            $table->string('route',100)->nullable();
             $table->timestamps();
         });
     }

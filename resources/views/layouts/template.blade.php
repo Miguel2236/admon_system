@@ -63,9 +63,7 @@
 											@foreach ($ress['UserPermission'] as $usr)
 												@if ($mod->id == $usr->module_id)
 													<li class="nav-item">
-														@php
-															echo $usr->button;
-														@endphp
+														<a href="{{ $usr->route != "" ? route($usr->route) : '' }}" class="nav-link">{{ $usr->section_short_name }}</a>
 													</li>
 												@endif
 											@endforeach
@@ -75,6 +73,20 @@
 							</li>
 						@endforeach
 					@endisset
+					{{-- <li class="nav-item">
+						<a class="nav-link" data-toggle="collapse" href="#test" role="button" aria-expanded="false" aria-controls="uiComponents">
+							<i class="fa fa-plus"></i>
+								<span class="link-title">Prueba</span>
+							<i class="link-arrow" data-feather="chevron-down"></i>
+						</a>
+						<div class="collapse" id="test">
+							<ul class="nav sub-menu">
+								<li class="nav-item">
+									<a href="{{ route('departament_list') }}" class="nav-link">Modules</a>
+								</li>
+							</ul>
+						</div>
+					</li> --}}
                 </ul>
             </div>
         </nav>
@@ -272,8 +284,8 @@
 										<img src="https://via.placeholder.com/80x80" alt="">
 									</div>
 									<div class="info text-center">
-										<p class="name font-weight-bold mb-0">Amiah Burton</p>
-										<p class="email text-muted mb-3">amiahburton@gmail.com</p>
+										<p class="name font-weight-bold mb-0">{{ $ress['User']->name }}</p>
+										<p class="email text-muted mb-3">{{ $ress['User']->email }}</p>
 									</div>
 								</div>
 								<div class="dropdown-body">
