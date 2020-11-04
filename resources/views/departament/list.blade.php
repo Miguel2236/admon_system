@@ -7,7 +7,16 @@
             <div class="row">
                 <div class="col-md-12 grid-margin stretch-card">
                     <div class="card">
-                        <div class="card-header">Listado de Departamentos</div>
+                        <div class="row">
+                            <div class="col-md-4"><div class="card-header">Listado de Departamentos</div></div>
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <div class="card-header">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newDep">Modal</button>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="table-responsive">
                             <table id="tblDep" class="table table-striped">
                                 <thead>
@@ -41,4 +50,12 @@
         </div>
     </div>
 </div>
+
+{{-- se incluye el modal --}}
+@include('departament.new')
 @endsection
+<script>
+    // $(document).ready( function () {
+    //     $('#tblDep').DataTable();
+    // } );
+</script>

@@ -35,7 +35,8 @@ class DepartamentController extends Controller
      */
     public function create()
     {
-        //
+        // cargar la vista para guardar un nuevo departamento
+
     }
 
     /**
@@ -46,7 +47,17 @@ class DepartamentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // guardar un departamento
+
+        $Dep = new Departament();
+
+        $Dep->name = $request->input('name');
+
+        $Dep->description = $request->input('description');
+
+        $Dep->save();
+
+        return redirect()->route('departament_list');
     }
 
     /**
