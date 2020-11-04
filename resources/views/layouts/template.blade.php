@@ -63,7 +63,7 @@
 											@foreach ($ress['UserPermission'] as $usr)
 												@if ($mod->id == $usr->module_id)
 													<li class="nav-item">
-														<a href="{{ $usr->route != "" ? route($usr->route) : '' }}" class="nav-link">{{ $usr->section_short_name }}</a>
+														<a href="{{ route($usr->route) }}" class="nav-link">{{ $usr->section_short_name }}</a>
 													</li>
 												@endif
 											@endforeach
@@ -73,20 +73,6 @@
 							</li>
 						@endforeach
 					@endisset
-					{{-- <li class="nav-item">
-						<a class="nav-link" data-toggle="collapse" href="#test" role="button" aria-expanded="false" aria-controls="uiComponents">
-							<i class="fa fa-plus"></i>
-								<span class="link-title">Prueba</span>
-							<i class="link-arrow" data-feather="chevron-down"></i>
-						</a>
-						<div class="collapse" id="test">
-							<ul class="nav sub-menu">
-								<li class="nav-item">
-									<a href="{{ route('departament_list') }}" class="nav-link">Modules</a>
-								</li>
-							</ul>
-						</div>
-					</li> --}}
                 </ul>
             </div>
         </nav>

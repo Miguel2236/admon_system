@@ -5,11 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Module;
 use App\Models\User;
-use App\Models\Departament;
 use Illuminate\Support\Facades\Auth;
 use DB;
 
-class DepartamentController extends Controller
+class ModuleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,14 +17,7 @@ class DepartamentController extends Controller
      */
     public function index()
     {
-        /**
-         * cargar el listado de departamentos
-         */
-
-        $dep = Departament::where('bActive',1)->get();
-        $ress = User::menu();
-
-        return view('departament.list',compact('dep','ress'));
+        //
     }
 
     /**

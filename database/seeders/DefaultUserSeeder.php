@@ -68,7 +68,7 @@ class DefaultUserSeeder extends Seeder
         DB::table('permissions')->insert([
             'section_id' => 1,
             'name' => 'Users module',
-            'route' => '',
+            'route' => 'user_list',
             'created_at' => date('Y-m-d H:i:s'),
         ]);
 
@@ -82,14 +82,14 @@ class DefaultUserSeeder extends Seeder
         DB::table('permissions')->insert([
             'section_id' => 3,
             'name' => 'Modules',
-            'route' => '',
+            'route' => 'module_list',
             'created_at' => date('Y-m-d H:i:s'),
         ]);
 
         DB::table('permissions')->insert([
             'section_id' => 4,
             'name' => 'Profiles Module',
-            'route' => '',
+            'route' => 'profiles_list',
             'created_at' => date('Y-m-d H:i:s'),
         ]);
 
