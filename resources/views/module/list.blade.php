@@ -7,23 +7,31 @@
             <div class="row">
                 <div class="col-md-12 grid-margin stretch-card">
                     <div class="card">
-                        <div class="card-header">Listado de Departamentos</div>
+                        <div class="row">
+                            <div class="col-md-4"><div class="card-header">Modules List</div></div>
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <div class="card-header">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newMod">Modal</button>
+                                </div>
+                            </div>
+                        </div>
                         <div class="table-responsive">
                             <table id="tblDep" class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Description</th>
-                                        <th>Status</th>
+                                        <th>Short Name</th>
+                                        <th>icon</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($dep as $d)
+                                    @foreach ($mod as $m)
                                         <tr>
-                                            <td>{{$d->name}}</td>
-                                            <td>{{$d->description}}</td>
-                                            <td>{{$d->bActive == 1 ? 'Activo' : 'Cerrado'}}</td>
+                                            <td>{{$m->name}}</td>
+                                            <td>{{$m->menu_name}}</td>
+                                            <td>{{$m->icon}}</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="#" class="btn btn-outline-dark"><i class="fas fa-pencil-alt"></i></a>
@@ -41,4 +49,12 @@
         </div>
     </div>
 </div>
+
+@include('module.new')
+
+<script>
+// $(document).ready( function () {
+//     $('#tblDep').DataTable();
+// } );
+</script>
 @endsection

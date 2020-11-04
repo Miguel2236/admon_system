@@ -17,7 +17,11 @@ class ModuleController extends Controller
      */
     public function index()
     {
-        //
+        // Listado de modulos
+        $mod = DB::table('modules')->get();
+        $ress = User::menu();
+
+        return view('module.list',compact(['mod','ress']));
     }
 
     /**
@@ -38,7 +42,20 @@ class ModuleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Guardar un nuevo modulo
+        $mod = new Module();
+
+        $mod->name = $request->input('name');
+
+        $mod->menu_name = $request->input('menu_name');
+
+        $mod->icon = $request->input('icon');
+
+        $mod->identify = $request->input('identify');
+
+        $mod->save();
+
+        return redirect()->route('module_list');
     }
 
     /**

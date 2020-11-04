@@ -22,6 +22,8 @@
 	<link rel="stylesheet" href="{{ asset('css/style.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/fontawesome.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap4.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/jquery.dataTables.css') }}">
     <!-- End layout styles -->
   <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" />
 </head>
@@ -52,7 +54,7 @@
 					@isset($ress['modules'])
 						@foreach ($ress['modules'] as $mod)
 							<li class="nav-item">
-								<a class="nav-link" data-toggle="collapse" href="#{{ $mod->identify }}" role="button" aria-expanded="false" aria-controls="uiComponents">
+								<a class="nav-link" data-toggle="collapse" href="#{{ $mod->identify }}" role="button" aria-expanded="false" aria-controls="{{ $mod->identify }}">
 									<i class="{{ $mod->icon }}"></i>
 										<span class="link-title">{{ $mod->name }}</span>
 									<i class="link-arrow" data-feather="chevron-down"></i>
@@ -73,6 +75,29 @@
 							</li>
 						@endforeach
 					@endisset
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="collapse" href="#forms" role="button" aria-expanded="false" aria-controls="forms">
+							<i class="link-icon" data-feather="inbox"></i>
+						  		<span class="link-title">Forms</span>
+						  	<i class="link-arrow" data-feather="chevron-down"></i>
+						</a>
+						<div class="collapse" id="forms">
+							<ul class="nav sub-menu">
+								<li class="nav-item">
+									<a href="pages/forms/basic-elements.html" class="nav-link">Basic Elements</a>
+								</li>
+								<li class="nav-item">
+									<a href="pages/forms/advanced-elements.html" class="nav-link">Advanced Elements</a>
+								</li>
+								<li class="nav-item">
+									<a href="pages/forms/editors.html" class="nav-link">Editors</a>
+								</li>
+								<li class="nav-item">
+									<a href="pages/forms/wizard.html" class="nav-link">Wizard</a>
+								</li>
+							</ul>
+						</div>
+					  </li>
                 </ul>
             </div>
         </nav>
@@ -346,6 +371,9 @@
   <!-- custom js for this page -->
   <script src="{{ asset('js/dashboard.js') }}"></script>
   <script src="{{ asset('js/datepicker.js') }}"></script>
+  <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
   <script src="{{ asset('js/all.min.js') }}"></script>
   {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 	<!-- end custom js for this page -->

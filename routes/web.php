@@ -29,5 +29,7 @@ Route::post('/departament/store', [DepartamentController::class, 'store'])->name
 
 Route::get('/module/list', [ModuleController::class, 'index'])->name('module_list');
 
+Route::post('/module/store', [ModuleController::class, 'store'])->name('module_store');
+
 Route::get('/profile/list', [ProfilesController::class, 'index'])->name('profiles_list');
 

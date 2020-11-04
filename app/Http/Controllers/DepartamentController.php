@@ -25,7 +25,7 @@ class DepartamentController extends Controller
         $dep = Departament::where('bActive',1)->get();
         $ress = User::menu();
 
-        return view('departament.list',compact('dep','ress'));
+        return view('departament.list',compact(['dep','ress']));
     }
 
     /**
