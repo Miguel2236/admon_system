@@ -17,12 +17,13 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <table id="tblDep" class="table table-striped">
+                            <table id="tblDep" class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
                                         <th>Short Name</th>
                                         <th>icon</th>
+                                        <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -32,10 +33,11 @@
                                             <td>{{$m->name}}</td>
                                             <td>{{$m->menu_name}}</td>
                                             <td>{{$m->icon}}</td>
+                                            <td>{{$m->bActive == 1 ? 'Active' : 'Cancel'}}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="#" class="btn btn-outline-dark"><i class="fas fa-pencil-alt"></i></a>
-                                                    <a href="#" class="btn btn-outline-dark"><i class="fa fa-trash"></i></a>
+                                                    <a href="{{ route('section_create',$m->id) }}" class="btn btn-outline-dark"><i class="fas fa-plus-square"></i></a>
+                                                    <a href="#" class="btn btn-outline-dark"><i class="fas fa-list"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -52,9 +54,4 @@
 
 @include('module.new')
 
-<script>
-// $(document).ready( function () {
-//     $('#tblDep').DataTable();
-// } );
-</script>
 @endsection

@@ -75,7 +75,7 @@
 							</li>
 						@endforeach
 					@endisset
-					<li class="nav-item">
+					{{-- <li class="nav-item">
 						<a class="nav-link" data-toggle="collapse" href="#forms" role="button" aria-expanded="false" aria-controls="forms">
 							<i class="link-icon" data-feather="inbox"></i>
 						  		<span class="link-title">Forms</span>
@@ -97,7 +97,7 @@
 								</li>
 							</ul>
 						</div>
-					  </li>
+					</li> --}}
                 </ul>
             </div>
         </nav>

@@ -19,6 +19,7 @@ class CreateModulesTable extends Migration
             $table->string('menu_name',50);
             $table->string('icon',50);
             $table->string('identify',100);
+            $table->integer('bActive')->default(1);
             $table->timestamps();
         });
     }

@@ -18,7 +18,9 @@ class ModuleController extends Controller
     public function index()
     {
         // Listado de modulos
-        $mod = DB::table('modules')->get();
+
+        $mod = Module::where('bActive',1)->get();
+        
         $ress = User::menu();
 
         return view('module.list',compact(['mod','ress']));

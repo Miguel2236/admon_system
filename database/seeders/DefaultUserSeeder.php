@@ -34,6 +34,7 @@ class DefaultUserSeeder extends Seeder
             'menu_name' => 'Administración',
             'icon' => 'fas fa-user-shield',
             'identify' => 'usrAdmin',
+            'bActive' => 1,
             'created_at' => date('Y-m-d H:i:s'),
         ]);       
 

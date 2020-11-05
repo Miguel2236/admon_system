@@ -1,16 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Section;
+use App\Models\User;
 
 use Illuminate\Http\Request;
-use App\Models\Module;
-use App\Models\User;
-use App\Models\Departament;
-use App\Models\Section;
-use Illuminate\Support\Facades\Auth;
-use DB;
 
-class DepartamentController extends Controller
+class SectionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,14 +15,7 @@ class DepartamentController extends Controller
      */
     public function index()
     {
-        /**
-         * cargar el listado de departamentos
-         */
-
-        $dep = Departament::where('bActive',1)->get();
-        $ress = User::menu();
-
-        return view('departament.list',compact(['dep','ress']));
+        //
     }
 
     /**
@@ -34,10 +23,13 @@ class DepartamentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        // cargar la vista para guardar un nuevo departamento
+        // formulario para crear una nueva seccion
 
+        $ress = User::menu();
+
+        return view('module.new_sections',compact(['ress','id']));
     }
 
     /**
@@ -48,17 +40,18 @@ class DepartamentController extends Controller
      */
     public function store(Request $request)
     {
-        // guardar un departamento
+        // Guardar una seccion
+        $sec = new Section();
 
-        $Dep = new Departament();
+        $sec->module_id = $request->input('module_id');
 
-        $Dep->name = $request->input('name');
+        $sec->name = $request->input('name');
 
-        $Dep->description = $request->input('description');
+        $sec->short_name = $request->input('short_name');
 
-        $Dep->save();
+        $sec->save();
 
-        return redirect()->route('departament_list');
+        return redirect()->route('module_list');
     }
 
     /**
