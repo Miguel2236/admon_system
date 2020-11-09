@@ -53,26 +53,26 @@
 					</li>
 					@isset($ress['modules'])
 						@foreach ($ress['modules'] as $mod)
-							<li class="nav-item">
-								<a class="nav-link" data-toggle="collapse" href="#{{ $mod->identify }}" role="button" aria-expanded="false" aria-controls="{{ $mod->identify }}">
-									<i class="{{ $mod->icon }}"></i>
-										<span class="link-title">{{ $mod->name }}</span>
-									<i class="link-arrow" data-feather="chevron-down"></i>
-								</a>
-								<div class="collapse" id="{{ $mod->identify }}">
-									<ul class="nav sub-menu">
-										@isset($ress['UserPermission'])
-											@foreach ($ress['UserPermission'] as $usr)
-												@if ($mod->id == $usr->module_id)
+							@if ($mod->id == $ress['UserPermission'][0]->module_id)
+								<li class="nav-item">
+									<a class="nav-link" data-toggle="collapse" href="#{{ $mod->identify }}" role="button" aria-expanded="false" aria-controls="{{ $mod->identify }}">
+										<i class="{{ $mod->icon }}"></i>
+											<span class="link-title">{{ $mod->name }}</span>
+										<i class="link-arrow" data-feather="chevron-down"></i>
+									</a>
+									<div class="collapse" id="{{ $mod->identify }}">
+										<ul class="nav sub-menu">
+											@isset($ress['UserPermission'])
+												@foreach ($ress['UserPermission'] as $usr)
 													<li class="nav-item">
 														<a href="{{ route($usr->route) }}" class="nav-link">{{ $usr->section_short_name }}</a>
 													</li>
-												@endif
-											@endforeach
-										@endisset
-									</ul>
-								</div>
-							</li>
+												@endforeach
+											@endisset
+										</ul>
+									</div>
+								</li>
+							@endif
 						@endforeach
 					@endisset
 					{{-- <li class="nav-item">
