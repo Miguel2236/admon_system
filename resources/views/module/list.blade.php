@@ -36,8 +36,8 @@
                                             <td>{{$m->bActive == 1 ? 'Active' : 'Cancel'}}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{ route('section_create',$m->id) }}" class="btn btn-outline-dark"><i class="fas fa-plus-square"></i></a>
-                                                    <a href="#" class="btn btn-outline-dark"><i class="fas fa-list"></i></a>
+                                                    <a href="{{ route('section_create',$m->id) }}" title="Nueva Seccion" class="btn btn-outline-dark"><i class="fas fa-plus-square"></i></a>
+                                                    <a href="{{ route('section_list',$m->id) }}" title="Secciones" class="btn btn-outline-dark"><i class="fas fa-list"></i></a>
                                                 </div>
                                             </td>
                                         </tr>

@@ -45,3 +45,5 @@ Route::get('/section/new/{id}', [SectionController::class, 'create'])->name('sec
 
 Route::post('/section/store', [SectionController::class, 'store'])->name('section_store');
 
+Route::get('/section/list/{id}', [SectionController::class, 'index'])->name('section_list');
+

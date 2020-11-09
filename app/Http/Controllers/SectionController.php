@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\Section;
+use App\Models\Module;
 use App\Models\User;
-
+use DB;
 use Illuminate\Http\Request;
 
 class SectionController extends Controller
@@ -13,9 +14,18 @@ class SectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        // obtener lista de secciones por modulo
+        $module = Module::find($id);
+
+        $moduleName = $module->name;
+
+        $sections = Section::where('module_id',$id)->get();
+        
+        $ress = User::menu();
+
+        return view('module.list_sections',compact('sections','moduleName','ress'));
     }
 
     /**
