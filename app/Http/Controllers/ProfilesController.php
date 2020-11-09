@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Profiles;
+use App\Models\UserPermissions;
+use App\Models\User;
+use App\Models\Module;
+use DB;
+use Illuminate\Support\Facades\Auth;
 
 class ProfilesController extends Controller
 {
@@ -13,7 +19,13 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        //
+        // cargar la lisga de perfiles
+        $ress = User::menu();
+
+        $profiles = Profiles::where('bActive',1)->get();
+
+        return view('profiles.list',compact('ress','profiles'));
+
     }
 
     /**
