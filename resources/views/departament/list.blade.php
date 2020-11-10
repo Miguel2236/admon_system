@@ -12,7 +12,7 @@
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <div class="card-header">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newDep">Modal</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newDep" title="New Departament"><i class="fas fa-plus-square"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -54,8 +54,3 @@
 {{-- se incluye el modal --}}
 @include('departament.new')
 @endsection
-<script>
-    // $(document).ready( function () {
-    //     $('#tblDep').DataTable();
-    // } );
-</script>

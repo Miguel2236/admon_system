@@ -40,6 +40,10 @@ Route::post('/module/store', [ModuleController::class, 'store'])->name('module_s
 // profiles
 Route::get('/profile/list', [ProfilesController::class, 'index'])->name('profiles_list');
 
+Route::get('/profile/new', [ProfilesController::class, 'create'])->name('profile_new');
+
+Route::post('/profile/store', [ProfilesController::class, 'store'])->name('profile_store');
+
 // secciones
 Route::get('/section/new/{id}', [SectionController::class, 'create'])->name('section_create');
 

@@ -11,9 +11,9 @@
                             <div class="col-md-4"><div class="card-header">Profiles List</div></div>
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
-                                {{-- <div class="card-header">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newMod">Modal</button>
-                                </div> --}}
+                                <div class="card-header">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPrf" title="New Profile"><i class="fas fa-plus-square"></i></button>
+                                </div>
                             </div>
                         </div>
                         <div class="table-responsive">
@@ -51,6 +51,6 @@
     </div>
 </div>
 
-@include('module.new')
+@include('profiles.new')
 
 @endsection

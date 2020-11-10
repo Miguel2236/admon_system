@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Profiles;
+use App\Models\Profile;
 use App\Models\UserPermissions;
 use App\Models\User;
 use App\Models\Module;
@@ -22,7 +22,7 @@ class ProfilesController extends Controller
         // cargar la lisga de perfiles
         $ress = User::menu();
 
-        $profiles = Profiles::where('bActive',1)->get();
+        $profiles = Profile::where('bActive',1)->get();
 
         return view('profiles.list',compact('ress','profiles'));
 
@@ -36,6 +36,7 @@ class ProfilesController extends Controller
     public function create()
     {
         //
+        
     }
 
     /**
@@ -46,7 +47,16 @@ class ProfilesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Guardar un nuevo perfil
+        $profile = New Profile();
+
+        $profile->name = $request->input('name');
+
+        $profile->description = $request->input('description');
+
+        $profile->save();
+
+        return redirect()->route('profiles_list');
     }
 
     /**
